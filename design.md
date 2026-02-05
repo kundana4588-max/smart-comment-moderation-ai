@@ -1,63 +1,103 @@
-# Smart Comment Moderation System – Design Document
+# System Design: AI-Powered Smart Comment Moderation System
 
-## System Overview
-The Smart Comment Moderation System is an AI-powered solution that analyzes user comments in real time to prevent toxic and harmful content from being posted on social media platforms. The system focuses on preventive moderation to promote healthy online conversations.
+## 1. System Architecture Overview
 
-## Architecture Overview
-The system consists of the following main components:
-- User Comment Interface
-- Text Preprocessing Module
-- AI Moderation Engine
-- Decision Logic Module
-- Response Handler
+### Components:
+1. Frontend UI (Instagram-like comment box)
+2. Backend API Server
+3. AI Moderation Engine
+4. Database & Logging System
 
-## Component Description
+---
 
-### User Comment Interface
-A simple comment input box where users type comments. Users can analyze comments before posting.
+## 2. Architecture Diagram (Textual)
 
-### Text Preprocessing Module
-- Cleans and normalizes text
-- Handles slang, informal spellings, and phonetic typing
-- Supports mixed-language input such as Hinglish and Tinglish
+User → Comment UI  
+→ Analyze Comment Button  
+→ Backend API  
+→ AI Toxicity Detection Model  
+→ Decision Engine  
+→ Response to UI (Safe / Mild / Severe)  
 
-### AI Moderation Engine
-- Uses NLP and Machine Learning models
-- Detects hate speech, harassment, bullying, threats, and abusive intent
-- Generates a toxicity score for each comment
+---
 
-### Decision Logic Module
-Based on analysis results:
-- Safe Content: Comment is allowed to post
-- Mild Toxic Content: Warning message shown and user encouraged to edit
-- Severe Toxic Content: Comment is blocked from posting
+## 3. AI Model Design
 
-### Response Handler
-Communicates moderation decisions back to the user interface in real time.
+### 3.1 Language Processing
+- Use NLP models trained on:
+  - English
+  - Hinglish (code-mixed Hindi-English)
+  - Tinglish (Telugu-English)
+- Handle slang, emojis, phonetic typing.
 
-## Data Flow
-1. User types a comment
-2. Comment is sent for preprocessing
-3. AI model analyzes the text
-4. Toxicity level is determined
-5. Decision is applied
-6. User receives feedback or permission to post
+### 3.2 Toxicity Detection
+Model outputs toxicity score:
+- 0–0.3 → Safe
+- 0.3–0.7 → Mild Toxic
+- >0.7 → Severe Toxic
 
-## Technology Stack
-- Programming Language: Python
-- NLP Libraries: Transformers / spaCy / NLTK
-- Machine Learning Models: Pre-trained toxicity classification models
-- Deployment: Cloud-based architecture
+---
 
-## Privacy and Security
-- No permanent storage of comments
-- Secure data transmission
-- Privacy-first moderation approach
+## 4. Decision Flow Logic
 
-## Scalability
-The system is designed to handle large volumes of comments with low latency and can be scaled horizontally based on traffic.
+### Step 1:
+User types a comment.
 
-## Future Enhancements
-- Support for additional Indian languages
-- Context-aware toxicity detection
-- Platform-specific moderation tuning
+### Step 2:
+User clicks "Analyze Comment".
+
+### Step 3:
+AI classifies comment into:
+- Safe
+- Mild Toxic
+- Severe Toxic
+
+### Step 4:
+System Action:
+- Safe → Enable Post button
+- Mild → Show warning and allow editing
+- Severe → Block posting
+
+---
+
+## 5. User Interface Design
+
+### UI Elements:
+- Comment Input Box
+- Analyze Comment Button
+- Post Comment Button (disabled by default)
+- Warning Message Pop-up
+
+---
+
+## 6. Technology Stack (Proposed)
+
+### Frontend:
+- React / HTML / CSS / JavaScript
+
+### Backend:
+- Python Flask / Node.js
+
+### AI Model:
+- Transformer-based NLP models (BERT / DistilBERT)
+- Custom fine-tuning for Hinglish & Tinglish
+
+### Deployment:
+- AWS EC2 / Lambda
+- API Gateway
+- Cloud Storage
+
+---
+
+## 7. Security & Privacy
+- No storing personal user identities.
+- Logs anonymized.
+- Compliance with platform moderation policies.
+
+---
+
+## 8. Future Enhancements
+- Voice-to-text moderation
+- Real-time emoji sentiment detection
+- User reputation scoring
+- Community feedback loop to retrain models
