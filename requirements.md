@@ -1,29 +1,52 @@
-# Smart Comment Moderation System
+# AI-Powered Smart Comment Moderation System
 
-## Overview
-The Smart Comment Moderation System is an AI-powered solution designed to promote safe and healthy online conversations by detecting harmful content before it is published.
+## 1. Problem Statement
+Social media platforms face increasing issues of hate speech, harassment, threats, and abusive language. Current moderation systems are mostly punitive and reactive. There is a need for a preventive moderation system that stops harmful comments before they are posted while encouraging healthy communication.
 
-## Objectives
-- Detect toxic and abusive comments in real time
-- Support multilingual and mixed-language text such as Hinglish and Tinglish
-- Prevent harmful comments while respecting freedom of expression
+## 2. Objective
+To design an AI-based real-time comment moderation system that:
+- Supports multilingual and mixed-language text (English, Hinglish, Tinglish).
+- Detects hate speech, harassment, threats, and abusive intent.
+- Encourages users to edit harmful comments instead of directly blocking them.
 
-## Functional Requirements
-- The system shall analyze user comments in real time.
-- The system shall detect hate speech, harassment, bullying, and threats.
-- The system shall classify comments as Safe, Mild Toxic, or Severe Toxic.
-- The system shall allow users to edit and re-analyze mildly toxic comments.
-- The system shall block severe toxic comments from being posted.
+## 3. Functional Requirements
 
-## Non-Functional Requirements
-- The system should provide low-latency responses.
-- The system should ensure user data privacy.
-- The system should be scalable for high user traffic.
+### 3.1 Comment Analysis
+- The system shall analyze comments in real time.
+- The system shall detect:
+  - Hate speech
+  - Harassment or bullying
+  - Threatening or intimidating tone
+  - Abusive intent even without explicit bad words
 
-## Assumptions
-- Users submit comments as text input.
-- Internet connectivity is available.
+### 3.2 Decision Levels
+- Safe Content: Allow comment posting.
+- Mild Toxic Content: Show a warning and allow user to edit.
+- Severe Toxic Content: Block posting automatically.
 
-## Constraints
-- The system focuses only on text-based comments.
-- No manual moderation dashboard is included.
+### 3.3 User Interface
+- Instagram-style comment input box.
+- Two buttons:
+  - Analyze Comment
+  - Post Comment (enabled only after safe analysis)
+
+### 3.4 Multilingual Support
+- Support Hinglish and Tinglish mixed language.
+- Handle slang, informal spelling, and phonetic typing.
+
+## 4. Non-Functional Requirements
+- Low latency for real-time processing.
+- High accuracy in toxicity detection.
+- Scalable for large social media platforms.
+- Privacy-preserving and secure.
+
+## 5. Stakeholders
+- Social media users
+- Platform administrators
+- Developers and moderators
+- Society and online communities
+
+## 6. Success Criteria
+- Reduction in toxic comments posted.
+- High user engagement in editing harmful comments.
+- Improved community safety metrics.
