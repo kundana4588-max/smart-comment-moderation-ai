@@ -6,12 +6,12 @@ Social media platforms face increasing issues of hate speech, harassment, threat
 ## 2. Objective
 To design an AI-based real-time comment moderation system that:
 - Supports multilingual and mixed-language text (English, Hinglish, Tinglish).
-- Detects hate speech, harassment, threats, and abusive intent.
+- Detects hate speech, harassment, threats, bullying, intimidating tone and abusive intent.
 - Encourages users to edit harmful comments instead of directly blocking them.
 
-## 3. Functional Requirements
+## 3. Requirements
 
-### 3.1 Comment Analysis
+### --> Comment Analysis
 - The system shall analyze comments in real time.
 - The system shall detect:
   - Hate speech
@@ -19,18 +19,13 @@ To design an AI-based real-time comment moderation system that:
   - Threatening or intimidating tone
   - Abusive intent even without explicit bad words
 
-### 3.2 Decision Levels
-- Safe Content: Allow comment posting.
-- Mild Toxic Content: Show a warning and allow user to edit.
-- Severe Toxic Content: Block posting automatically.
-
-### 3.3 User Interface
+### --> User Interface
 - Instagram-style comment input box.
 - Two buttons:
   - Analyze Comment
   - Post Comment (enabled only after safe analysis)
 
-### 3.4 Multilingual Support
+### --> Multilingual Support
 - Support Hinglish and Tinglish mixed language.
 - Handle slang, informal spelling, and phonetic typing.
 
@@ -50,3 +45,4 @@ To design an AI-based real-time comment moderation system that:
 - Reduction in toxic comments posted.
 - High user engagement in editing harmful comments.
 - Improved community safety metrics.
+
