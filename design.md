@@ -23,18 +23,12 @@ User → Comment UI
 
 ## 3. AI Model Design
 
-### 3.1 Language Processing
+### --> Language Processing
 - Use NLP models trained on:
   - English
   - Hinglish (code-mixed Hindi-English)
   - Tinglish (Telugu-English)
-- Handle slang, emojis, phonetic typing.
-
-### 3.2 Toxicity Detection
-Model outputs toxicity score:
-- 0–0.3 → Safe
-- 0.3–0.7 → Mild Toxic
-- >0.7 → Severe Toxic
+- Handle slang, phonetic typing.
 
 ---
 
@@ -98,6 +92,6 @@ System Action:
 
 ## 8. Future Enhancements
 - Voice-to-text moderation
-- Real-time emoji sentiment detection
-- User reputation scoring
 - Community feedback loop to retrain models
+- Extension to all regional languages
+- Integration with multiple social media platforms, messaging and communiting platforms
